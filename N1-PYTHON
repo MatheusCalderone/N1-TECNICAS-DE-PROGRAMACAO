@@ -1,0 +1,88 @@
+# Matheus Calderone - RA: 21516155
+# Flavio da Silva - RA: 21520376
+# Joao Gabriel Magalhaes de Oliveira RA: 21524387
+# Igor Moura Sousa - RA: 21577555
+print ("Você está em um labirinto!!")
+print ("\n")
+print ("Regras:")
+print ("Os heróis vencem ao chegar na Sala 9;")
+print ("Os heróis perdem se interagirem mais de 7 vezes com o programa para chegarem na sala 9")
+print ("\n")
+
+interacoes = 7
+caminho = 1
+sala = 1
+
+while (interacoes >0 and sala < 9):
+
+    print ("Você está na sala: ", sala)
+    print ("interacoes restantes: ", interacoes)
+    print ("Escolha seu caminho:")
+    print("[1] - caminho vermelho")
+    print("[2] - caminho preto")
+
+    interacoes = interacoes - 1
+
+    caminho = int(input())
+
+    if (caminho == 1 and interacoes >=1):
+
+        sala = sala + 1
+
+    elif (caminho == 2 and interacoes >=1):
+
+        sala = sala + 2
+
+    else:
+        pass
+
+
+    while(sala == 6 and interacoes >0):
+
+        print ("Você está na sala: ", sala)
+        print ("interacoes restantes: ", interacoes)
+        print ("Escolha seu caminho:")
+        print("[2] - caminho preto")
+
+        caminho = int(input())
+
+        interacoes = interacoes -1
+
+        if (caminho == 2 and interacoes >=1):
+
+            sala = sala + 2
+
+        else:
+            pass
+
+    while (sala == 8 and interacoes >0):
+
+        print ("Você está na sala: ", sala)
+        print ("interacoes restantes: ", interacoes)
+        print ("Escolha seu caminho:")
+        print("[1] - caminho vermelho")
+        print("[2] - caminho preto")
+
+        interacoes = interacoes - 1
+
+        caminho = int(input())
+
+        if (caminho == 1 and interacoes >=1):
+
+            sala = sala + 1
+
+        elif (caminho == 2 and interacoes >=1):
+
+            import random
+            
+            sala = random.randint(-1,3)
+
+        else:
+            pass
+
+if (sala == 9 and interacoes >=1):
+    print ("Parabéns!!")
+    print ("Você conseguiu chegar na sala 9 e saiu do labirinto!")
+
+else:
+    print ("você perdeu, interagiu mais de 7 vezes!")
